@@ -24,18 +24,10 @@ ch.setFormatter(formatter)
 log.addHandler(ch)
 
 
-if 'TOKEN' not in os.environ:
-    raise RuntimeError("Put bot token in TOKEN env var")
 
-if 'SUBREDDIT' not in os.environ:
-    raise RuntimeError("Put subreddit name in SUBREDDIT env var")
-
-if 'CHANNEL' not in os.environ:
-    raise RuntimeError("Put channel name in CHANNEL env var")
-
-TOKEN = os.environ['TOKEN']
-SUBREDDIT = os.environ['SUBREDDIT']
-CHANNEL = os.environ['CHANNEL']
+TOKEN = os.environ.get("TOKEN", "5613702848:AAHqmEv47v3PHuJBkMbO_AYMb-AUC4cq8js")
+SUBREDDIT = os.environ.get('SUBREDDIT', 'r/animegifs')
+CHANNEL = os.environ.get('CHANNEL', '-1001600575903')
 START_TIME = datetime.utcnow().timestamp()
 
 
